@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tala\TwoCheckout;
+namespace Tala\Billing\TwoCheckout;
 
 use Mockery as m;
 use Tala\CreditCard;

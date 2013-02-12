@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Tala Payments package.
+ * This file is part of the Omnipay package.
  *
  * (c) Adrian Macneil <adrian@adrianmacneil.com>
  *
@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace Tala\Billing\TwoCheckout;
+namespace Omnipay\Billing\TwoCheckout;
 
 use Mockery as m;
-use Tala\BaseGatewayTest;
-use Tala\CreditCard;
-use Tala\Request;
+use Omnipay\BaseGatewayTest;
+use Omnipay\CreditCard;
+use Omnipay\Request;
 
 class GatewayTest extends BaseGatewayTest
 {
     public function setUp()
     {
-        $this->httpClient = m::mock('\Tala\HttpClient\HttpClientInterface');
+        $this->httpClient = m::mock('\Omnipay\HttpClient\HttpClientInterface');
         $this->httpRequest = m::mock('\Symfony\Component\HttpFoundation\Request');
 
         $this->gateway = new Gateway($this->httpClient, $this->httpRequest);
@@ -38,12 +38,12 @@ class GatewayTest extends BaseGatewayTest
         $source = new CreditCard;
         $response = $this->gateway->purchase($this->options);
 
-        $this->assertInstanceOf('\Tala\RedirectResponse', $response);
+        $this->assertInstanceOf('\Omnipay\RedirectResponse', $response);
         $this->assertContains('https://www.2checkout.com/checkout/purchase?', $response->getRedirectUrl());
     }
 
     /**
-     * @expectedException Tala\Exception\InvalidResponseException
+     * @expectedException Omnipay\Exception\InvalidResponseException
      */
     public function testCompletePurchaseError()
     {

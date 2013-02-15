@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Omnipay\Billing\TwoCheckout;
+namespace Omnipay\TwoCheckout;
 
 use Omnipay\GatewayTestCase;
-use Omnipay\CreditCard;
+use Omnipay\Common\CreditCard;
 
 class GatewayTest extends GatewayTestCase
 {
@@ -35,12 +35,12 @@ class GatewayTest extends GatewayTestCase
         $source = new CreditCard;
         $response = $this->gateway->purchase($this->options);
 
-        $this->assertInstanceOf('\Omnipay\RedirectResponse', $response);
+        $this->assertInstanceOf('\Omnipay\Common\RedirectResponse', $response);
         $this->assertContains('https://www.2checkout.com/checkout/purchase?', $response->getRedirectUrl());
     }
 
     /**
-     * @expectedException Omnipay\Exception\InvalidResponseException
+     * @expectedException Omnipay\Common\Exception\InvalidResponseException
      */
     public function testCompletePurchaseError()
     {

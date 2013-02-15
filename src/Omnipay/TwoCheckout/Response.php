@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Omnipay\Billing\TwoCheckout;
+namespace Omnipay\TwoCheckout;
 
-use Omnipay\AbstractResponse;
+use Omnipay\Common\AbstractResponse;
 use Omnipay\Exception;
-use Omnipay\Exception\InvalidResponseException;
+use Omnipay\Common\Exception\InvalidResponseException;
 
 /**
  * 2Checkout Response

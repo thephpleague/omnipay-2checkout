@@ -2,7 +2,7 @@
 
 namespace Omnipay\TwoCheckout\Message;
 
-use Omnipay\TestCase;
+use Omnipay\Tests\TestCase;
 
 class CompletePurchaseResponseTest extends TestCase
 {

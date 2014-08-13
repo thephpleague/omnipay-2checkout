@@ -39,6 +39,7 @@ class PurchaseRequest extends AbstractRequest
         $data['merchant_order_id'] = $this->getTransactionId();
         $data['total'] = $this->getAmount();
         $data['tco_currency'] = $this->getCurrency();
+        $data['currency_code'] = $this->getCurrency();
         $data['fixed'] = 'Y';
         $data['skip_landing'] = 1;
         $data['x_receipt_link_url'] = $this->getReturnUrl();

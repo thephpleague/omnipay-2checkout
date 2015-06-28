@@ -32,7 +32,7 @@ class GatewayTest extends GatewayTestCase
         $this->assertNull($response->getMessage());
         $this->assertContains('https://www.2checkout.com/checkout/purchase?', $response->getRedirectUrl());
         $this->assertSame('GET', $response->getRedirectMethod());
-        $this->assertNull($response->getRedirectData());
+        $this->assertEquals(array(), $response->getRedirectData());
     }
 
     /**

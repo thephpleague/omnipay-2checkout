@@ -11,6 +11,7 @@ use Omnipay\Common\Message\RedirectResponseInterface;
 class PurchaseResponse extends AbstractResponse implements RedirectResponseInterface
 {
     protected $endpoint = 'https://www.2checkout.com/checkout/purchase';
+    protected $testEndpoint = 'https://sandbox.2checkout.com/checkout/purchase';
 
     public function isSuccessful()
     {
@@ -24,7 +25,8 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
 
     public function getRedirectUrl()
     {
-        return $this->endpoint.'?'.http_build_query($this->data);
+        $endpoint = $this->getRequest()->getTestMode() ? $this->testendpoint : $this->endpoint;
+        return $endpoint.'?'.http_build_query($this->data);
     }
 
     public function getRedirectMethod()

@@ -1,5 +1,9 @@
-# Omnipay: 2Checkout
+# Omnipay: 2Checkout (Deprecated)
 
+This driver uses [lagacy parameters](http://help.2checkout.com/articles/Knowledge_Article/Legacy-Parameter-Set) with no support to pass line items of products to puchase and lack support for payment via credit card token.
+Use this [improved driver](https://github.com/collizo4sky/omnipay-2checkout) instead (https://github.com/collizo4sky/omnipay-2checkout)
+ 
+ 
 **2Checkout driver for the Omnipay PHP payment processing library**
 
 [![Build Status](https://travis-ci.org/thephpleague/omnipay-2checkout.png?branch=master)](https://travis-ci.org/thephpleague/omnipay-2checkout)
